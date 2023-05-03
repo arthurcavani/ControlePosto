@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bomba" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55390a0a-2d5d-4332-bf95-60b9b7ae09b7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM bomba]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_combustivel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="litros" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorlitro" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valortotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="144" y="10" width="259" height="49" uuid="f55888aa-dcd1-439d-91bd-2a66ed5b5ec5"/>
+				<textElement>
+					<font size="34"/>
+				</textElement>
+				<text><![CDATA[Relatorio Bomba]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="59" width="100" height="20" uuid="cf91a227-1e1f-48ad-bd3e-9e76b49aef18"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="2" width="100" height="20" uuid="c00935a0-34ec-4894-8eca-2eeffa5f7cfb"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="2" width="100" height="20" uuid="e45d3966-a98b-4c59-84c8-1d829650fda4"/>
+				<text><![CDATA[id combustivel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="2" width="100" height="20" uuid="d1a5cc49-05c5-4108-b39b-fa0ff3124a7c"/>
+				<text><![CDATA[litros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="2" width="100" height="20" uuid="f5dadab3-e376-483e-ba2c-3a9d2939c18e"/>
+				<text><![CDATA[valor litro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="2" width="100" height="20" uuid="af092270-a470-40e4-9c15-5ad0f646227e"/>
+				<text><![CDATA[valor total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="7" width="100" height="20" uuid="76bbaa40-85be-433b-b6c8-3ea979e45813"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="7" width="100" height="20" uuid="9b1dc0cc-21a6-4fc1-a780-913532db46dd"/>
+				<textFieldExpression><![CDATA[$F{id_combustivel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="7" width="100" height="20" uuid="04468085-e760-4e55-9cc3-29e118f51568"/>
+				<textFieldExpression><![CDATA[$F{litros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="7" width="100" height="20" uuid="21d56a7f-b778-40dc-8bef-b446ea8c3792"/>
+				<textFieldExpression><![CDATA[$F{valorlitro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="7" width="100" height="20" uuid="e5dd4d8c-e43f-48b7-97fe-3ff7baa37a0c"/>
+				<textFieldExpression><![CDATA[$F{valortotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="22" width="100" height="20" uuid="efc0d08f-fcb2-4f2e-af9a-e7baa0f50b1c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
